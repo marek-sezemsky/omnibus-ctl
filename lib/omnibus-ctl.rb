@@ -269,7 +269,7 @@ module Omnibus
     end
 
     def show_config(*args)
-      status = run_command("chef-solo -c #{base_path}/embedded/cookbooks/solo.rb -j #{base_path}/embedded/cookbooks/show-config.json -l fatal")
+      status = run_command("chef-solo -c #{base_path}/embedded/cookbooks/solo.rb -j #{base_path}/embedded/cookbooks/show-config.json -l fatal -Fnull")
       if status.success?
         exit! 0
       else
